@@ -1,0 +1,5 @@
+node_modules
+*.pem
+*.csr
+*.p12
+.env
