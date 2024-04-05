@@ -31,10 +31,12 @@ proxy.on("proxyReq", function (proxyReq, req, res, options) {
 });
 
 var sendError = function (res, err) {
-  return res.status(500).send({
+  res.writeHead(500);
+  res.write(JSON.stringify({
     error: err,
     message: "An error occured in the proxy",
-  });
+  }));
+  return res.end();
 };
 
 // error handling
