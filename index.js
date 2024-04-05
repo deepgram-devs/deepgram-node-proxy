@@ -36,6 +36,7 @@ var sendError = function (res, err) {
     error: err,
     message: "An error occured in the proxy",
   }));
+  return res.end();
 };
 
 // error handling
